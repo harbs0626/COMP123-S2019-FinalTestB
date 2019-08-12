@@ -5,6 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Student Name: Harbin Ramo
+ * Student ID  : 301046044
+ * Description : This is the driver class for the application
+ */
+
 namespace COMP123_S2019_FinalTestB
 {
     static class Program
