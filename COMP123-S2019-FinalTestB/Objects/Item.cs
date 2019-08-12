@@ -10,9 +10,10 @@ using System.Threading.Tasks;
  * Description : This is the Item Class.
  *               Used for Inventory Management.
  */
+
 namespace COMP123_S2019_FinalTestB.Objects
 {
-    class Item
+    public class Item
     {
         public string Description { get; set; }
         public float Weight { get; set; }
