@@ -112,6 +112,9 @@ namespace COMP123_S2019_FinalTestB.Views
             }
         }
 
+        /// <summary>
+        /// This method for Generate Abilities
+        /// </summary>
         private void GenerateAbilitiesButton_Click(object sender, EventArgs e)
         {
             Random valStrength = new Random();
@@ -136,6 +139,9 @@ namespace COMP123_S2019_FinalTestB.Views
             this.CharismaDataLabel.Text = Program.character.Charisma;
         }
 
+        /// <summary>
+        /// This method for Generate Inventory
+        /// </summary>
         private void GenerateInventoryButton_Click(object sender, EventArgs e)
         {
             this.GenerateRandomInventory();
@@ -170,6 +176,33 @@ namespace COMP123_S2019_FinalTestB.Views
                 strInventory.Close();
                 strInventory.Dispose();
             }
+        }
+
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            saveDialog.FileName = "CharacterCreation.txt";
+
+            using (StreamWriter wrData = new StreamWriter(saveDialog.FileName))
+            {
+                wrData.WriteLine(Program.character.FirstName);
+                wrData.WriteLine(Program.character.LastName);
+                wrData.WriteLine(Program.character.Strength);
+                wrData.WriteLine(Program.character.Dexterity);
+                wrData.WriteLine(Program.character.Constitution);
+                wrData.WriteLine(Program.character.Intelligence);
+                wrData.WriteLine(Program.character.Wisdom);
+                wrData.WriteLine(Program.character.Charisma);
+                wrData.WriteLine(Program.character.InventoryList[0]);
+                wrData.WriteLine(Program.character.InventoryList[1]);
+                wrData.WriteLine(Program.character.InventoryList[2]);
+                wrData.WriteLine(Program.character.InventoryList[3]);
+                wrData.Close();
+                wrData.Dispose();
+            }
+            MessageBox.Show("Character Recorded!");
+            return;
         }
     }
 }
