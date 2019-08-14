@@ -149,10 +149,12 @@ namespace COMP123_S2019_FinalTestB.Views
         {
             Random randInventory = new Random();
 
-            Program.inventory[0] = Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)];
-            Program.inventory[1] = Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)];
-            Program.inventory[2] = Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)];
-            Program.inventory[3] = Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)];
+            Program.inventory = new List<string>{
+                Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)],
+                Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)],
+                Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)],
+                Program.character.InventoryList[randInventory.Next(Program.character.InventoryList.Count)]
+            };
         }
 
         private void LoadInventory()
