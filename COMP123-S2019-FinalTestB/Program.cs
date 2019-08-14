@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using COMP123_S2019_FinalTestB.Objects;
 /*
  * Student Name: Harbin Ramo
  * Student ID  : 301046044
@@ -17,6 +17,9 @@ namespace COMP123_S2019_FinalTestB
     {
         // Temporary
         public static CharacterGeneratorForm characterForm;
+        public static Character character;
+        public static List<string> inventory;
+
         
         /// <summary>
         /// The main entry point for the application.
@@ -28,6 +31,8 @@ namespace COMP123_S2019_FinalTestB
             Application.SetCompatibleTextRenderingDefault(false);
 
             characterForm = new CharacterGeneratorForm();
+            character = new Character();
+            inventory = new List<string>();
 
             Application.Run(characterForm);
         }
